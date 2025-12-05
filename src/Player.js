@@ -17,15 +17,17 @@ export default class Player extends GameObject {
 
     update(deltaTime) {
         // Styr spelaren med piltangenterna
-        if (this.game.inputHandler.keys.has('ArrowUp')) {
+        if (this.game.inputHandler.keys.has(' ') ) {
             this.velocityY = -this.moveSpeed
             this.directionY = -1
-        } else if (this.game.inputHandler.keys.has('ArrowDown')) {
-            this.velocityY = this.moveSpeed
-            this.directionY = 1
-        } else {
-            this.velocityY = 0
-            this.directionY = 0
+        } else if (this.y < 435 )  {
+            this.velocityY = 0.2
+            this.directionY=0
+
+
+        }else{
+            this.velocityY =0
+            this.directionY=0
         }
 
         if (this.game.inputHandler.keys.has('ArrowLeft')) {
@@ -72,8 +74,19 @@ export default class Player extends GameObject {
         ctx.strokeStyle = 'black'
         ctx.lineWidth = 2
         ctx.beginPath()
-        ctx.moveTo(this.x + this.width * 0.3, this.y + this.height * 0.65)
-        ctx.lineTo(this.x + this.width * 0.7, this.y + this.height * 0.65)
+        ctx.moveTo(this.x + this.width * 0.7, this.y + this.height * 0.75)
+        ctx.lineTo(this.x + this.width * 0.3, this.y + this.height * 0.75)
+
+        ctx.moveTo(this.x + this.width * 0.2, this.y + this.height * 0.72)
+        ctx.lineTo(this.x + this.width * 0.8, this.y + this.height * 0.72)
+
+
+        ctx.moveTo(this.x + this.width * 0.65, this.y + this.height * 0.76)
+        ctx.lineTo(this.x + this.width * 0.85, this.y + this.height * 0.68)
+
+        ctx.moveTo(this.x + this.width * 0.45, this.y + this.height * 0.77)
+        ctx.lineTo(this.x + this.width * 0.2, this.y + this.height * 0.68)
+
         ctx.stroke()
     }
 }
