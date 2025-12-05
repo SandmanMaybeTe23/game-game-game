@@ -170,6 +170,7 @@ export default class Circle extends GameObject {
 }
 ```
 
+
 ### Visa tid
 
 Rita en text på canvas som visar hur många sekunder spelet har varit igång. Använd `fillText`-metoden på canvas-kontexten för att rita text.

@@ -19,12 +19,16 @@ export default class Rectangle extends GameObject {
         this.y += this.velocityY * deltaTime
 
         // Studsa mot väggarna
+
+
         if (this.x < 0 || this.x + this.width > this.game.width) {
             this.velocityX = -this.velocityX * this.bounce  // Byt X-riktning
         }
         if (this.y < 0 || this.y + this.height > this.game.height) {
             this.velocityY = -this.velocityY * this.bounce  // Byt Y-riktning
         }
+
+        
     }
 
     draw(ctx) {
