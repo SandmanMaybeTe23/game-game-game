@@ -2,6 +2,9 @@ import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import Rectangle from './Rectangle.js'
 
+
+
+
 export default class Game {
     constructor(width, height) {
         this.width = width
@@ -9,7 +12,7 @@ export default class Game {
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 50, 50, 50, 50, 'purple')
+        this.player = new Player(this, 50, 50, 50, 50, "purple")
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
@@ -35,6 +38,16 @@ export default class Game {
         if (this.inputHandler.keys.has('b')) {
             this.gameObjects[1].vy -= 0.001 * deltaTime
         }
+
+        if(this.player.y>425){
+            this.player.color="orange"
+
+            setTimeout(console.log("i am wait"),40000);
+            this.player.color="purple"
+        }
+
+
+
     }
 
     draw(ctx) {
