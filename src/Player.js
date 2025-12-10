@@ -1,8 +1,8 @@
 import GameObject from './GameObject.js'
 
 export default class Player extends GameObject {
-    constructor(game, x, y, width, height, color) {
-        super(game, x, y, width, height)
+    constructor(game, x, y, width, height, color,collision) {
+        super(game, x, y, width, height,collision)
         this.color = color
         
         // Nuvarande hastighet (pixels per millisekund)
@@ -20,7 +20,7 @@ export default class Player extends GameObject {
         if (this.game.inputHandler.keys.has('ArrowUp')) {
             this.velocityY = -this.moveSpeed
             this.directionY = -1
-        } else if (this.game.inputHandler.keys.has('ArrowDown')) {
+        } else if (this.game.inputHandler.keys.has('ArrowDown') )  {
             this.velocityY = this.moveSpeed
             this.directionY = 1
         } else {

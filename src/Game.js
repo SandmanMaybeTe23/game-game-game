@@ -9,11 +9,13 @@ export default class Game {
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 50, 50, 50, 50, 'green')
+        this.player = new Player(this, 50, 50, 50, 50, 'purple',0)
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
-            new Rectangle(this, 200, 150, 50, 50, 'red')
+            new Rectangle(this, 200, 150, 400, 50, 'red',false),
+            new Rectangle(this,100,250,40,100,"green",false),
+            new Rectangle(this,500,0,100,100,"yellow",false)
         ]
 
         // Sätt starthastighet (pixlar per millisekund)
@@ -30,7 +32,7 @@ export default class Game {
 
         // Exempel på input-hantering
         if (this.inputHandler.keys.has('r')) {
-            this.gameObjects[0].vx += 0.001 * deltaTime
+            this.gameObjects[0].vx += 0.01 * deltaTime
         }
         if (this.inputHandler.keys.has('b')) {
             this.gameObjects[1].vy -= 0.001 * deltaTime
@@ -38,17 +40,25 @@ export default class Game {
 
         this.gameObjects.forEach(obj => {
             if (obj !== this.player && this.player.intersects(obj)) {
+                    obj.follow=true
+                    obj.color="purple"
                 // Hantera kollision baserat på riktning
                 if (this.player.directionX > 0) { // rör sig åt höger
                     this.player.x = obj.x - this.player.width
+                    
+                
                 } else if (this.player.directionX < 0) { // rör sig åt vänster
                     this.player.x = obj.x + obj.width
+
                 }
                 if (this.player.directionY > 0) { // rör sig neråt
                     this.player.y = obj.y - this.player.height
+                    
                 } else if (this.player.directionY < 0) { // rör sig uppåt
                     this.player.y = obj.y + obj.height
+                    
                 }
+
             }
         })
     }
