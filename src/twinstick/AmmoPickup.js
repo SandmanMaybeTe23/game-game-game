@@ -12,7 +12,7 @@ export default class AmmoPickup extends GameObject {
         this.gravity = options.gravity || 0.0008 // Gravitation
         this.groundY = y // Target Y position (marken)
         this.isFlying = options.isFlying || false
-        this.bounce = 1 // Hur mycket den studsar
+        this.bounce = 0.1 // Hur mycket den studsar
         
         // Visual effects
         this.scale = 2
@@ -25,6 +25,9 @@ export default class AmmoPickup extends GameObject {
             // Applicera velocity
             this.x += this.velocityX * deltaTime
             this.y += this.velocityY * deltaTime
+
+
+            this.rotationSpeed=deltaTime*2
             
             // Applicera gravitation
             this.velocityY += this.gravity * deltaTime
