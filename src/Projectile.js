@@ -10,6 +10,7 @@ export default class Projectile extends GameObject {
         this.startY = y
         this.maxDistance = 800 // Max en skärm långt
         this.color = 'orange'
+        this.bounce = 0
     }
     
     update(deltaTime) {

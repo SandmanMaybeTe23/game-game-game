@@ -27,15 +27,15 @@ export default class TwinstickPlayer extends GameObject {
         
         // Shooting system
         this.shootCooldown = 0
-        this.shootCooldownDuration = 200 // Millisekunder mellan skott
+        this.shootCooldownDuration = 20 // Millisekunder mellan skott
         
         // Ammo system
-        this.maxAmmo = 8 // Skott per magasin
+        this.maxAmmo = 1000 // Skott per magasin
         this.currentAmmo = this.maxAmmo
-        this.reserveAmmo = 60 // Total reserv-ammo
+        this.reserveAmmo = 600 // Total reserv-ammo
         this.isReloading = false
         this.reloadTimer = 0
-        this.reloadDuration = 1500 // Millisekunder att ladda om
+        this.reloadDuration = 100 // Millisekunder att ladda om
         
         // Dash system
         this.isDashing = false
@@ -224,9 +224,20 @@ export default class TwinstickPlayer extends GameObject {
         
         // Skapa projektil från spelarens position
         this.game.addProjectile(centerX, centerY, directionX, directionY)
+        this.game.addProjectile(centerX+15, centerY, directionX, directionY)
+        this.game.addProjectile(centerX-15, centerY, directionX, directionY)
+
+
         
         // Minska ammo
         this.currentAmmo--
+        this.currentAmmo--
+        this.currentAmmo--
+
+
+
+
+        
     }
     
     takeDamage(amount) {

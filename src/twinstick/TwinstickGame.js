@@ -60,7 +60,7 @@ export default class TwinstickGame extends GameBase {
     addProjectile(x, y, directionX, directionY) {
         // Skapa en ny projektil med Projectile-klassen
         const projectile = new Projectile(this, x, y, directionX, directionY)
-        projectile.speed = 0.6 // Twinstick är snabbare än platformer
+        projectile.speed = 1 // Twinstick är snabbare än platformer
         projectile.color = 'yellow'
         projectile.width = 8
         projectile.height = 8
@@ -130,7 +130,24 @@ export default class TwinstickGame extends GameBase {
             // Kolla kollision mellan projektiler och väggar
             arenaData.walls.forEach(wall => {
                 if (projectile.intersects(wall)) {
-                    projectile.markedForDeletion = true
+                    projectile.markedForDeletion = false
+                    let collision_data = projectile.getCollisionData(wall)
+                    let direction = collision_data.direction
+
+                    if (direction == "top" || direction == "bottom") {
+                        projectile.directionY = -projectile.directionY
+
+                    }
+
+                    if (direction == "left" || direction == "right") {
+                        projectile.directionX = -projectile.directionX
+                    }
+
+                    projectile.bounce += 1
+
+                    if (projectile.bounce > 10)
+                        projectile.markedForDeletion = true
+                        
                 }
             })
         })

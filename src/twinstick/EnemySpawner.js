@@ -24,14 +24,14 @@ export default class EnemySpawner {
         
         // Spawn timing
         this.spawnTimer = 0
-        this.spawnDelay = 2000 // 2 sekunder mellan spawns
+        this.spawnDelay = 200 // 2 sekunder mellan spawns
         this.waveDelay = 5000  // 5 sekunder mellan waves
         this.waveDelayTimer = 0
         
         // Countdown display
         this.countdownActive = false
         this.countdownTimer = 0
-        this.countdownDuration = 3000 // 3 sekunder countdown
+        this.countdownDuration = 300 // 3 sekunder countdown
         this.countdownWaveNumber = 0
         
         // Wave state

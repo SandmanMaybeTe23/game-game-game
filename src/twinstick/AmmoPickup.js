@@ -4,7 +4,7 @@ export default class AmmoPickup extends GameObject {
     constructor(game, x, y, options = {}) {
         super(game, x, y, 16, 16)
         this.color = 'red'
-        this.ammoValue = 1 // Varje pickup ger 1 ammo
+        this.ammoValue = 1000// Varje pickup ger 1 ammo
         
         // Physics för "flying" pickups
         this.velocityX = options.velocityX || 0
@@ -30,10 +30,10 @@ export default class AmmoPickup extends GameObject {
             this.rotationSpeed=deltaTime*2
             
             // Applicera gravitation
-            this.velocityY += this.gravity * deltaTime
+            this.velocityY += this.gravity * deltaTime*2
             
             // Rotation under flygning
-            this.rotation += this.rotationSpeed * deltaTime
+            this.rotation += this.rotationSpeed * deltaTime*2
             
             // Kolla om vi landat
             if (this.y >= this.groundY) {
