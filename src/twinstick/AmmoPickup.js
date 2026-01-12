@@ -3,7 +3,7 @@ import GameObject from '../GameObject.js'
 export default class AmmoPickup extends GameObject {
     constructor(game, x, y, options = {}) {
         super(game, x, y, 16, 16)
-        this.color = 'gold'
+        this.color = 'red'
         this.ammoValue = 1 // Varje pickup ger 1 ammo
         
         // Physics för "flying" pickups
