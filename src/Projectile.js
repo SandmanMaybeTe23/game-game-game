@@ -12,6 +12,9 @@ export default class Projectile extends GameObject {
         this.maxDistance = 800 // Max en skärm långt
         this.color = 'orange'
         this.bounce = 0
+
+        this.sound = new Audio(A10)
+        this.sound.volume = 0.3
     }
     
     update(deltaTime) {
