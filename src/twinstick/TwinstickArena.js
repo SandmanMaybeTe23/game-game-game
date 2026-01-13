@@ -65,7 +65,7 @@ export default class TwinstickArena {
             waves: [
                 // Wave 1: Endast små fiender
                 {
-                    enemies: ['small', 'small', 'small', 'small']
+                    enemies:['small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small','small' ]
                 },
                 // Wave 2: Mix av små och medel
                 {
@@ -87,6 +87,7 @@ export default class TwinstickArena {
                 {
                     enemies: ['boss', 'medium', 'medium']
                 }
+                    
             ]
         }
     }

@@ -1,6 +1,9 @@
 import GameObject from './GameObject.js'
 import A10 from './assets/sounds/A30.mp3'
 
+
+
+
 export default class Projectile extends GameObject {
     constructor(game, x, y, directionX, directionY = 0) {
         super(game, x, y, 12, 6)
@@ -18,6 +21,12 @@ export default class Projectile extends GameObject {
     }
     
     update(deltaTime) {
+
+        console.log(deltaTime)
+     
+            this.sound.currentTime = 0 // Reset så det kan spelas flera gånger snabbt
+            this.sound.play().catch(e => console.log('shoot sound play failed :', e))
+            
         // Flytta projektilen i 2D
         this.x += this.directionX * this.speed * deltaTime
         this.y += this.directionY * this.speed * deltaTime
