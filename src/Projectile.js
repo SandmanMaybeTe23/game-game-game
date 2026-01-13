@@ -1,4 +1,5 @@
 import GameObject from './GameObject.js'
+import A10 from './assets/sounds/A30.mp3'
 
 export default class Projectile extends GameObject {
     constructor(game, x, y, directionX, directionY = 0) {
