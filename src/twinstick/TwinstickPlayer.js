@@ -1,5 +1,8 @@
 import GameObject from "../GameObject.js"
 
+import knightSprite_idle from '../assets/Crusader 1/Crusader-idle.png'
+import knightSprite_jump from '../assets/Crusader 1/Crusader-Jumping.png'
+import knightSprite_run from '../assets/Crusader 1/Crusader-Running.png'
 
 
 

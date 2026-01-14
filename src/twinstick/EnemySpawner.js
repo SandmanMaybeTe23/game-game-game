@@ -4,6 +4,9 @@ import LargeEnemy from "./enemies/LargeEnemy.js"
 import BossEnemy from "./enemies/BossEnemy.js"
 import AmmoPickup from "./AmmoPickup.js"
 
+
+
+
 /**
  * Hanterar spawning av fiender i waves
  * Konfigureras av leveln för att definiera när och hur fiender spawnas

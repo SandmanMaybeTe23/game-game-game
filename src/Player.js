@@ -3,6 +3,10 @@ import idleSprite from './assets/Pixel Adventure 1/Main Characters/Ninja Frog/Id
 import runSprite from './assets/Pixel Adventure 1/Main Characters/Ninja Frog/Run (32x32).png'
 import jumpSprite from './assets/Pixel Adventure 1/Main Characters/Ninja Frog/Jump (32x32).png'
 import fallSprite from './assets/Pixel Adventure 1/Main Characters/Ninja Frog/Fall (32x32).png'
+import knightSprite_idle from './assets/Pixel Adventure 1/Main Characters/Crusader-Idle.png'
+import knightSprite_jump from './assets/Pixel Adventure 1/Main Characters/Crusader-Jumping.png'
+import knightSprite_run from './assets/Pixel Adventure 1/Main Characters/Crusader-Running.png'
+
 
 export default class Player extends GameObject {
     constructor(game, x, y, width, height, color) {
