@@ -25,6 +25,15 @@ export default class Rectangle extends GameObject {
         if (this.y < 0 || this.y + this.height > this.game.height) {
             this.velocityY = -this.velocityY * this.bounce  // Byt Y-riktning
         }
+
+
+        if (this.y < 400){
+            this.velocityY = 0.2
+
+        }else{
+            this.y = 0
+        }
+
     }
 
     draw(ctx) {

@@ -17,27 +17,16 @@ export default class Player extends GameObject {
 
     update(deltaTime) {
         // Styr spelaren med piltangenterna
-        if (this.game.inputHandler.keys.has(' ') ) {
-            this.velocityY = -this.moveSpeed
-            this.directionY = -1
 
-        } else if (this.y < 435 )  {
-            this.velocityY = 0.2
-            this.directionY=0
-
-        }else{
-            this.velocityY =0
-            this.directionY=0
-            console.log(this.y)
-                
-        }
 
         if (this.game.inputHandler.keys.has('ArrowLeft')) {
             this.velocityX = -this.moveSpeed
             this.directionX = -1
+
         } else if (this.game.inputHandler.keys.has('ArrowRight')) {
             this.velocityX = this.moveSpeed
             this.directionX = 1
+            
         } else {
             this.velocityX = 0
             this.directionX = 0

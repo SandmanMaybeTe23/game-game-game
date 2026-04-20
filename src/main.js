@@ -3,8 +3,10 @@ import Game from './Game.js'
 
 const setupGame = (canvas) => {
     // Sätt storlek på canvas 854x480 (16:9)
-    canvas.width = 854
-    canvas.height = 480
+    canvas.width = 400
+    canvas.height = 400
+
+    
     // ctx är "ritkontexten", används för att rita på canvas
     const ctx = canvas.getContext('2d')
 

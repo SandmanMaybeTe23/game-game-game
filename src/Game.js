@@ -12,11 +12,11 @@ export default class Game {
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 50, 50, 50, 50, "purple")
+        this.player = new Player(this, 200, 350, 50, 50, "purple")
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
-            new Rectangle(this, 200, 150, 50, 50, 'red')
+            new Rectangle(this, 50, 100, 300, 50, 'red')
         ]
 
         // Sätt starthastighet (pixlar per millisekund)
@@ -28,6 +28,11 @@ export default class Game {
 
     update(deltaTime) {
         // Uppdatera spelet utifrån deltaTime
+
+
+       
+
+
         this.gameObjects.forEach(obj => obj.update(deltaTime))
         this.player.update(deltaTime)
 
