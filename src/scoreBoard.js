@@ -1,13 +1,8 @@
 import GameObject from './GameObject.js'
-var enemy_set = 0
-var speed = 0.1
-var esculator = 10000
-
-var diffucalty = 0.1
 
 
-export default class Rectangle extends GameObject {
-    constructor(game, x, y, width, height, color = 'green', ) {
+export default class ScoreBoard extends GameObject {
+    constructor(game, x, y, width, height, color = 'green',  ) {
         super(game, x, y, width, height)
         this.color = color
 
@@ -24,6 +19,7 @@ export default class Rectangle extends GameObject {
         this.x += this.velocityX * deltaTime
         this.y += this.velocityY * deltaTime
 
+
         // Studsa mot väggarna
         if (this.x < 0 || this.x + this.width > this.game.width) {
             this.velocityX = -this.velocityX * this.bounce  // Byt X-riktning
@@ -33,43 +29,11 @@ export default class Rectangle extends GameObject {
         }
 
 
-       // speed += deltaTime/esculator
 
- 
-        if (this.y < 400){
-            this.velocityY = speed
-            
-
-        }else{
-            this.y = 0
-            enemy_set = Math.floor(Math.random() * 4)    
-            if (enemy_set == 0){
-                this.x = 0}
-
-            else if (enemy_set == 1){
-                this.x = 100
-            } else if ( enemy_set == 2 ){
-                this.x = 200
-
-            }else {
-                this.x = 300
-            }
-
-        }
-              
         
 
-            if (speed % 5  >=  diffucalty  ){ 
-                console.log(diffucalty);
-                diffucalty += 0.1
-                esculator = esculator * 1.25
-                console.log(esculator);
-
-            }
-           
-                    
-
-
+        
+        
         
 
 
@@ -79,5 +43,8 @@ export default class Rectangle extends GameObject {
         // Rita rektangeln
         ctx.fillStyle = this.color
         ctx.fillRect(this.x, this.y, this.width, this.height)
+
+
+        
     }
 }
