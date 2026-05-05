@@ -3,6 +3,7 @@ body {
     height: 100vh;
     display: grid;
     place-items: center;
+    color:rgb(65, 169, 47);
 }
 
 canvas#game {
@@ -10,4 +11,14 @@ canvas#game {
     max-width: 100%;
     width: 100%;;
 }
+
+
+
+
+li{
+    list-style: none;
+    font-size: 25px ;
+    font-family: sans-serif;
+}
+
 

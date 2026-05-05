@@ -7,7 +7,7 @@ import ScoreBoard from './scoreBoard.js'
 
 var score_timer = 0
 var player_score_x= 425
-var player_name_x = 450 
+var player_name_x = 475 
 
 
 
@@ -112,9 +112,6 @@ export default class Game {
         }
 
 
-        if (this.score >= 100 &&  player_name_x == 450){
-            player_name_x += 25
-        }
 
 
 

@@ -11,7 +11,10 @@
 <body>
 
 
-
+<ol>
+  
+  <li id="korv"></li>
+</ol>
 
 
   <div id="app">
@@ -38,13 +41,21 @@
         result.forEach((element) =>{ 
 
         // jag vill göra ett li som har data sparad från ett element 
-        const card = document.createElement('p');
-        card.textContent = element.score
-        console.log(card)
-        card.append
-
+        const ace = document.createElement('li');
+        ace.textContent = element.score
+        ace.textContent += "  "
+        ace.textContent += element.name
+        console.log(ace)
+        korv.appendChild(ace)
+        korv.appendChild(ace)
+        
+        
+        
         
 
+
+
+          
 
 
         });
