@@ -10,21 +10,17 @@
 
 <body>
 
-
-<ol>
-  
-  <li id="korv"></li>
-</ol>
-
+ 
 
   <div id="app">
-    <canvas id="game">If you see this text your browser is old or javascript is disabled.</canvas>
-  </div>
-  <script type="module" src="/src/main.js"></script>
+   <canvas id="game">If you see this text your browser is old or javascript is disabled.</canvas> 
+  </div> 
+  <ol class="boardPosition" id="scoreBoard"></ol>
+  <script type="module" src="/src/main.js"></script> 
 
 
   <script>
-      
+
 
 
     async function getData() {
@@ -38,29 +34,22 @@
         const result = await response.json();
         console.log(result);
 
-        result.forEach((element) =>{ 
+        result.forEach((element) => {
 
-        // jag vill göra ett li som har data sparad från ett element 
-        const ace = document.createElement('li');
-        ace.textContent = element.score
-        ace.textContent += "  "
-        ace.textContent += element.name
-        console.log(ace)
-        korv.appendChild(ace)
-        korv.appendChild(ace)
-        
-        
-        
-        
+          // jag vill göra ett li som har data sparad från ett element 
+          const ace = document.createElement('li');
+          ace.textContent = element.score
+          ace.textContent += "  "
+          ace.textContent += element.name
+          console.log(ace)
+          scoreBoard.appendChild(ace)
 
 
-
-          
 
 
         });
 
-        
+
 
 
       } catch (error) {
@@ -69,11 +58,9 @@
     }
 
 
-    
-
     getData()
 
-    
+
 
   </script>
 

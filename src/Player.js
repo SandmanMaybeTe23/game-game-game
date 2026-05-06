@@ -1,9 +1,14 @@
 import GameObject from './GameObject.js'
 
 export default class Player extends GameObject {
-    constructor(game, x, y, width, height, color) {
+    constructor(game, x, y, width, height, color,score, name) {
         super(game, x, y, width, height)
         this.color = color
+
+        this.name  = name
+        this.score = score 
+        
+
         
         // Nuvarande hastighet (pixels per millisekund)
         this.velocityX = 0

@@ -5,28 +5,23 @@ import ScoreBoard from './scoreBoard.js'
 
 
 
-var score_timer = 0
-var player_score_x= 425
-var player_name_x = 475 
-
-
-
 export default class Game {
-    constructor(width, height, score) {
+    constructor(width, height, timer) {
         this.width = width-200
         this.height = height
-        this.score = 99
+        this.timer = 0
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 200, 350, 50, 50, "purple")
+        this.player = new Player(this, 200, 350, 50, 50, "purple",0,"SND")
+       
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
             
-            new Rectangle(this, 0, 0, 95, 30, 'red'),
+            new Rectangle(this, 0, 0, 95, 30, 'red',0.1),
 
-            new Rectangle(this, 100, 0, 95, 30, 'red'),
+            new Rectangle(this, 100, 0, 95, 30, 'red',0.1 ),
 
 
             new ScoreBoard(this, 400,0, 200, 400 , 'black' ),
@@ -100,12 +95,11 @@ export default class Game {
         })
 
 
-        score_timer+=deltaTime
+        this.timer += deltaTime
 
-
-        if (score_timer >= 1000){
-            score_timer=0
-            this.score += 1
+        if (this.timer >= 1000){
+            this.timer=0
+            this.player.score += 1
             
             
 
@@ -129,11 +123,14 @@ export default class Game {
         ctx.fillStyle = "#40d616"
 
         ctx.font = "25px serif";
-        ctx.fillText(this.score, player_score_x, 50);
+        ctx.fillText(this.player.score, 425, 50);
 
 
         ctx.font = "25px serif"
-        ctx.fillText("SND",player_name_x  ,50 )
+        ctx.fillText(this.player.name,475  ,50 )
+
+
+
 
 
 

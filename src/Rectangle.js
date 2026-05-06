@@ -1,15 +1,14 @@
 import GameObject from './GameObject.js'
-var enemy_set = 0
-var speed = 0.1
-var esculator = 10000
-
-var diffucalty = 0.1
 
 
 export default class Rectangle extends GameObject {
-    constructor(game, x, y, width, height, color = 'green', ) {
+    constructor(game, x, y, width, height, color = 'green',speed  ) {
         super(game, x, y, width, height)
         this.color = color
+
+        this.speed = speed
+        this.enemy_set = 0
+
 
         // Hastighet (pixels per millisekund)
         this.velocityX = 0
@@ -37,18 +36,19 @@ export default class Rectangle extends GameObject {
 
  
         if (this.y < 400){
-            this.velocityY = speed
+            this.velocityY = this.speed
             
 
         }else{
             this.y = 0
-            enemy_set = Math.floor(Math.random() * 4)    
-            if (enemy_set == 0){
+            this.speed += 0.005
+            this.enemy_set = Math.floor(Math.random() * 4)    
+            if (this.enemy_set == 0){
                 this.x = 0}
 
-            else if (enemy_set == 1){
+            else if (this.enemy_set == 1){
                 this.x = 100
-            } else if ( enemy_set == 2 ){
+            } else if ( this.enemy_set == 2 ){
                 this.x = 200
 
             }else {
@@ -58,15 +58,7 @@ export default class Rectangle extends GameObject {
         }
               
         
-
-            if (speed % 5  >=  diffucalty  ){ 
-                console.log(diffucalty);
-                diffucalty += 0.1
-                esculator = esculator * 1.25
-                console.log(esculator);
-
-            }
-           
+  
                     
 
 
