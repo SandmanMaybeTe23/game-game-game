@@ -1,18 +1,19 @@
 import './style.css'
 import Game from './Game.js'
+import getData from './Data.js'
 
-const setupGame = (canvas) => {
+const setupGame = async (canvas) => {
     // Sätt storlek på canvas 854x480 (16:9)
     canvas.width = 600
     canvas.height = 400
 
-    
+    const scores = await getData()
     
     // ctx är "ritkontexten", används för att rita på canvas
     const ctx = canvas.getContext('2d')
 
     // Skapa spelet
-    const game = new Game(canvas.width, canvas.height)
+    const game = new Game(canvas.width, canvas.height, 0, scores)
     let lastTime = 0
     // Game loop variabel så att vi kan stoppa den senare om vi vill
     let gameLoop

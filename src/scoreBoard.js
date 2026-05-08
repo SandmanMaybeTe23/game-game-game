@@ -1,4 +1,6 @@
 import GameObject from './GameObject.js'
+import getData from './Data.js'
+
 
 
 export default class ScoreBoard extends GameObject {
@@ -12,6 +14,10 @@ export default class ScoreBoard extends GameObject {
         
         // Studs-faktor (1.0 = perfekt studs, 0.8 = tappar energi)
         this.bounce = 1.0
+
+        this.scores = []
+        
+        
     }
 
     update(deltaTime) {
@@ -39,30 +45,16 @@ export default class ScoreBoard extends GameObject {
         ctx.fillStyle = this.color
         ctx.fillRect(this.x, this.y, this.width, this.height)
 
+
+
+
     }
 
-
-
-    async function getData() {
-    const url = "https://example.org/products.json";
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        console.log(result);
-    } catch (error) {
-        console.error(error.message);
-    }
-
-
+  
 }
 
 
 
 
 
-
-
+  

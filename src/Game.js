@@ -3,30 +3,27 @@ import InputHandler from './InputHandler.js'
 import Rectangle from './Rectangle.js'
 import ScoreBoard from './scoreBoard.js'
 
-
-
 export default class Game {
-    constructor(width, height, timer) {
-        this.width = width-200
+    constructor(width, height, timer = 0, scores) {
+        this.width = width - 200
         this.height = height
-        this.timer = 0
+        this.timer = timer
+        this.scores = scores
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 200, 350, 50, 50, "purple",0,"SND")
-       
+        this.player = new Player(this, 200, 350, 50, 50, "purple", 0, "SND")
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
-            
-            new Rectangle(this, 0, 0, 95, 30, 'red',0.1),
 
-            new Rectangle(this, 100, 0, 95, 30, 'red',0.1 ),
+            new Rectangle(this, 0, 0, 95, 30, 'red', 0.1),
+
+            new Rectangle(this, 100, 0, 95, 30, 'red', 0.1),
+
+            new ScoreBoard(this, 400, 0, 200, 400, 'black'),
 
 
-            new ScoreBoard(this, 400,0, 200, 400 , 'black' ),
-
-           
 
 
 
@@ -41,12 +38,6 @@ export default class Game {
 
     update(deltaTime) {
         // Uppdatera spelet utifrån deltaTime
-
-        
-        
-        
-        
-
 
         this.gameObjects.forEach(obj => obj.update(deltaTime))
         this.player.update(deltaTime)
@@ -64,12 +55,12 @@ export default class Game {
 
 
 
-   
 
-         this.gameObjects.forEach(obj => {
+
+        this.gameObjects.forEach(obj => {
             if (obj !== this.player && this.player.intersects(obj)) {
-                
-                if (this.player.x < 349 && this.player.x > -0.1){
+
+                if (this.player.x < 349 && this.player.x > -0.1) {
                     this.player.y = 1000000
                 }
 
@@ -77,18 +68,18 @@ export default class Game {
                 // Hantera kollision baserat på riktning
                 if (this.player.directionX > 0) { // rör sig åt höger
                     this.player.x = obj.x - this.player.width
-                    
-                
+
+
                 } else if (this.player.directionX < 0) { // rör sig åt vänster
                     this.player.x = obj.x + obj.width
 
                 }
                 if (this.player.directionY > 0) { // rör sig neråt
                     this.player.y = obj.y - this.player.height
-                    
+
                 } else if (this.player.directionY < 0) { // rör sig uppåt
                     this.player.y = obj.y + obj.height
-                    
+
                 }
 
             }
@@ -97,11 +88,11 @@ export default class Game {
 
         this.timer += deltaTime
 
-        if (this.timer >= 1000){
-            this.timer=0
+        if (this.timer >= 1000) {
+            this.timer = 0
             this.player.score += 1
-            
-            
+
+
 
         }
 
@@ -127,11 +118,26 @@ export default class Game {
 
 
         ctx.font = "25px serif"
-        ctx.fillText(this.player.name,475  ,50 )
+        ctx.fillText(this.player.name, 475, 50)
 
+        this.scores.forEach(score => {
 
+            var y_position = 60
+            
+            ctx.font = "25px serif"
+            ctx.fillText(score.name, 400, y_position)
+            console.log(y_position)
+            
+            if (y_position != 120){
+                y_position =+ 10
+            }else{
+                y_position =+ 60
+            }
+            
 
+        });
 
+        //console.log(this.scores)
 
 
 
