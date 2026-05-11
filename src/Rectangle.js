@@ -1,4 +1,5 @@
 import GameObject from './GameObject.js'
+import InputHandler from './InputHandler.js'
 
 
 export default class Rectangle extends GameObject {
@@ -31,11 +32,14 @@ export default class Rectangle extends GameObject {
             this.velocityY = -this.velocityY * this.bounce  // Byt Y-riktning
         }
 
+        if(this.game.InputHandler.keys.has(r)){
+            this.y = 10000
+        }
 
        // speed += deltaTime/esculator
 
  
-        if (this.y < 400){
+        if (this.y < 400 ){
             this.velocityY = this.speed
             
 

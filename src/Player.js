@@ -15,7 +15,7 @@ export default class Player extends GameObject {
         this.velocityY = 0
 
         // Rörelsehastighet (hur snabbt spelaren accelererar/rör sig)
-        this.moveSpeed = 1
+        this.moveSpeed = 0.6
         this.directionX = 0
         this.directionY = 0
     }
