@@ -1,3 +1,5 @@
+
+
 export default async function getData() { 
     const url = "http://localhost:3000/api";
     try {
@@ -14,4 +16,5 @@ export default async function getData() {
     } catch (error) {
         console.error(error.message);
     }}
+
 
