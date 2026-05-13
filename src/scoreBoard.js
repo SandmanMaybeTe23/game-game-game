@@ -3,6 +3,7 @@ import getData from './Data.js'
 
 
 
+
 export default class ScoreBoard extends GameObject {
     constructor(game, x, y, width, height, color = 'green',  ) {
         super(game, x, y, width, height)
@@ -17,14 +18,14 @@ export default class ScoreBoard extends GameObject {
 
         this.scores = []
         
-        
+     
     }
 
     update(deltaTime) {
         // Flytta baserat på hastighet
         this.x += this.velocityX * deltaTime
         this.y += this.velocityY * deltaTime
-
+       
 
         // Studsa mot väggarna
         if (this.x < 0 || this.x + this.width > this.game.width) {

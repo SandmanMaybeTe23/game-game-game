@@ -32,9 +32,7 @@ export default class Rectangle extends GameObject {
             this.velocityY = -this.velocityY * this.bounce  // Byt Y-riktning
         }
 
-        if(this.game.InputHandler.keys.has(r)){
-            this.y = 10000
-        }
+
 
        // speed += deltaTime/esculator
 

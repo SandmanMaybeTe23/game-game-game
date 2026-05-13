@@ -2,6 +2,7 @@ import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import Rectangle from './Rectangle.js'
 import ScoreBoard from './scoreBoard.js'
+import { sendData } from './Data.js'
 
 export default class Game {
     constructor(width, height, timer = 0, scores, gameOver = "False") {
@@ -38,6 +39,8 @@ export default class Game {
         // Uppdatera spelet utifrån deltaTime
 
 
+
+
         if (this.gameOver != "True") 
             this.gameObjects.forEach(obj => obj.update(deltaTime))
             this.player.update(deltaTime)
@@ -50,6 +53,12 @@ export default class Game {
                 this.player.y = 350
             }
 
+            this.gameObjects.forEach(obj => {
+                if(this.player.score <= 0 ){
+                    obj.y = 0
+                }
+                
+            });
 
 
             this.gameObjects.forEach(obj => {
@@ -57,7 +66,8 @@ export default class Game {
 
                     if (this.player.x < 349 && this.player.x > -0.1) {
                         this.gameOver = "True"
-                            
+                        this.player.y = 100000000000
+                        sendData(this.player.name,  this.player.score)
                     }
 
                     // Hantera kollision baserat på riktning
