@@ -4,7 +4,8 @@ export default class Player extends GameObject {
     constructor(game, x, y, width, height, color,score, name) {
         super(game, x, y, width, height)
         this.color = color
-
+        this.alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        this.maxLetterClamp = 0
         this.name  = name
         this.score = score 
         
@@ -23,6 +24,14 @@ export default class Player extends GameObject {
     update(deltaTime) {
         // Styr spelaren med piltangenterna
          
+        if (this.name == "" ){
+            while (this.maxLetterClamp != 3)
+              let random=Math.floor(Math.random() * 27)
+                this.name += this.alphabet[random]            
+
+
+        }
+
 
         if (this.game.inputHandler.keys.has('ArrowLeft') && this.x > 10 ) {
             this.velocityX = -this.moveSpeed

@@ -4,6 +4,9 @@ import Rectangle from './Rectangle.js'
 import ScoreBoard from './scoreBoard.js'
 import { sendData } from './Data.js'
 
+
+
+
 export default class Game {
     constructor(width, height, timer = 0, scores, gameOver = "False") {
         this.width = width - 200
@@ -15,7 +18,7 @@ export default class Game {
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 200, 350, 50, 50, "purple", 0, "SND")
+        this.player = new Player(this, 200, 350, 50, 50, "purple", 0, "")
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
@@ -67,6 +70,7 @@ export default class Game {
                     if (this.player.x < 349 && this.player.x > -0.1) {
                         this.gameOver = "True"
                         this.player.y = 100000000000
+                        console.log()
                         sendData(this.player.name,  this.player.score)
                     }
 

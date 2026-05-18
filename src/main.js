@@ -2,6 +2,8 @@ import './style.css'
 import Game from './Game.js'
 import getData from './Data.js'
 
+
+
 const setupGame = async (canvas) => {
     // Sätt storlek på canvas 854x480 (16:9)
     canvas.width = 600

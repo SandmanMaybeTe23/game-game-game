@@ -20,21 +20,29 @@ export default async function getData() {
 }
 
 
+
+
+
 export async function sendData(name, score) {
-
     console.log(name, score)
-    try {
-
-        const response = await fetch("http://localhost:3000/api", {
-            method: "POST",
-            body: JSON.stringify({ name: name, score: score }),
-        })
-        console.log(response)
-    } catch (error) {
-        console.error(error.message);
-    }
     
+
+    try{
+        const apiRespond = await fetch("http://localhost:3000/api",{
+            method : "POST",
+            body : JSON.stringify({name , score}),
+            headers: { "Content-Type": "application/json" }
+
+            
+        })
+        
+    console.log("Respond", apiRespond)
+    
+    }catch(error){
+        console.log(error)
+    }
+
+
 }
 
 
-sendData()
