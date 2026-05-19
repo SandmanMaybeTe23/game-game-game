@@ -25,12 +25,16 @@ export default class Player extends GameObject {
         // Styr spelaren med piltangenterna
          
         if (this.name == "" ){
-            while (this.maxLetterClamp != 3)
-              let random=Math.floor(Math.random() * 27)
-                this.name += this.alphabet[random]            
+            while (this.maxLetterClamp < 3){
+                this.maxLetterClamp += 1
+              let choice = Math.floor(Math.random() * 26)
+                this.name += this.alphabet[choice]   
+
+            }        
 
 
         }
+
 
 
         if (this.game.inputHandler.keys.has('ArrowLeft') && this.x > 10 ) {

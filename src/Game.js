@@ -102,7 +102,8 @@ export default class Game {
 
         if (this.timer >= 1000 && this.gameOver != "True") {
             this.timer = 0
-            this.player.score += 1
+            this.player.score += 1 
+            
         }
 
     }

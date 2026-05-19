@@ -25,6 +25,8 @@ export default async function getData() {
 
 export async function sendData(name, score) {
     console.log(name, score)
+
+    
     
 
     try{

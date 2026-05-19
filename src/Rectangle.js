@@ -43,7 +43,7 @@ export default class Rectangle extends GameObject {
 
         }else{
             this.y = 0
-            this.speed += 0.005
+            this.speed += 0.0075
             this.enemy_set = Math.floor(Math.random() * 4)    
             if (this.enemy_set == 0){
                 this.x = 0}
