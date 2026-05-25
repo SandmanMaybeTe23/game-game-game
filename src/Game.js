@@ -9,7 +9,7 @@ import { sendData } from './Data.js'
 
 export default class Game {
     constructor(width, height, timer = 0, scores, gameOver = "False") {
-        this.width = width - 200
+        this.width = width 
         this.height = height
         this.timer = timer
         this.scores = scores
@@ -18,7 +18,7 @@ export default class Game {
 
         this.inputHandler = new InputHandler(this)
 
-        this.player = new Player(this, 200, 350, 50, 50, "purple", 0, "")
+        this.player = new Player(this, 200, 350, 50, 50, "purple", 0, "JGS")
 
         // Skapa alla objekt i spelet
         this.gameObjects = [
@@ -44,9 +44,10 @@ export default class Game {
 
 
 
-        if (this.gameOver != "True") 
+        if (this.gameOver != "True"){
             this.gameObjects.forEach(obj => obj.update(deltaTime))
             this.player.update(deltaTime)
+        }
 
             // Exempel på input-hantering
             if (this.inputHandler.keys.has('r')) {
@@ -59,6 +60,7 @@ export default class Game {
             this.gameObjects.forEach(obj => {
                 if(this.player.score <= 0 ){
                     obj.y = 0
+                    obj.speed = 0.1
                 }
                 
             });

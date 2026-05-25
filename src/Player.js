@@ -51,9 +51,7 @@ export default class Player extends GameObject {
         }
 
 
-        if(this.game.inputHandler.keys.has('Enter')){
-            this.y=350
-        }
+
 
         // Uppdatera position baserat på hastighet
         this.x += this.velocityX * deltaTime

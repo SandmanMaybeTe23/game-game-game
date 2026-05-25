@@ -26,9 +26,6 @@ export default async function getData() {
 export async function sendData(name, score) {
     console.log(name, score)
 
-    
-    
-
     try{
         const apiRespond = await fetch("http://localhost:3000/api",{
             method : "POST",
