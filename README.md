@@ -2,7 +2,7 @@
 * You need to follow this list to be able to use Slut-projekt 
 
 1. You will need a server
-   * I use Tableplus so make a server the structure values name(varchar 3) and score(int) also id(int) 
+   * I use Tableplus so make a server the structure values name(varchar 3) and score(int) also id(int) you can also use the file spelserver.sql that exist in projekt.   
    * If namn your server spelserver it will become easier but it you did namn it that please remember you namn you will need it for the webbsite later
    * Now add a user to data like name = TES and with score = 123 this is for testing proposes you can delete it after this tutorial is over
    * when you are done with all this you should be done with the server   
