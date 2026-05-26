@@ -2,16 +2,16 @@
 * You need to follow this list to be able to use Slut-projekt 
 
 1. You will need a server
-   * I use Tableplus so make a server the structure values name(varchar 3) and score(int) also id(int) you can also use the file spelserver.sql that exist in projekt.   
-   * If namn your server spelserver it will become easier but it you did namn it that please remember you namn you will need it for the webbsite later
-   * Now add a user to data like name = TES and with score = 123 this is for testing proposes you can delete it after this tutorial is over
-   * when you are done with all this you should be done with the server   
+   * I use Tableplus so make a server the structure values name(varchar 3) and score(int) also id(int) you can also use the file spelserver.sql that exist in projekt and import it in to you chocen server this will make it easier do be noted that there is already some score on there you can delete it if you want to.   
+   * When you namn your server remeber what it is call because you will need it later 
+ 
 
 2. Webbsite API
    * First fork this https://github.com/SandmanMaybeTe23/scpre-api.git and do the necessary steps like npm install to get it running   
-   * Then first to view there you will find a .env and look at DATABASE_DATABASE it should be set to spelserver but if you have changed it replace that with your server namn
-   * Efter that go to your terminal and run npm run dev to start the webbsite and you should be looking att a vit site with TES 123 then in your browser to and add /api then you should be looking at jSON code then copy the whole browser.
-   *  You should be done now with that but rember that the Slut projekt cannot be use if this is not activated so keep it online until you stopt using the Slut projekt
+   * Then the first thing you need to do is add the .env and the code from the .env-exempel and add the necessary values to all exept DATABASE-DATABASE you will need to set DATABASE-DATABASE to your servers namn 
+   * with all that done you will need to go to your terminal and run npm run dev and then a link to the webbsite will appear click it and you should open it to your chosen browser the in the url do /api and enter then you should be looking at at JSON code but what you will need to do it copy the whole browser link and save it to some where.
+   * do be noted that you cannot play the game with out having this activated and the now you are done with the webbsite. 
+
 
 3.Setting for the slut projekt
 * You should forked this https://github.com/SandmanMaybeTe23/game-game-game/tree/slut-projekt and also do the necessary step like npm install and get it running
